@@ -1,0 +1,1373 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <meta name="description" content="PURE Coffee & Food — coffee, breakfast, dinner and a place to work in Batumi. Open every day, 9:00–22:00.">
+  <title>PURE — Coffee, Food & Good Hours in Batumi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f5f2eb;
+      --paper-deep: #e9e3d8;
+      --ink: #191a17;
+      --muted: #696860;
+      --coffee: #a65e3b;
+      --coffee-dark: #75412d;
+      --line: rgba(25, 26, 23, .17);
+      --serif: "Fraunces", Georgia, serif;
+      --sans: "DM Sans", "Segoe UI", Arial, sans-serif;
+      --page: min(1380px, calc(100% - 64px));
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page {
+      width: var(--page);
+      margin-inline: auto;
+    }
+
+    .announcement {
+      padding: 10px 20px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .announcement span {
+      color: #d9a080;
+    }
+
+    .header {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      min-height: 94px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .brand-name {
+      font-family: var(--serif);
+      font-size: 1.48rem;
+      font-weight: 600;
+      letter-spacing: -.055em;
+    }
+
+    .brand-name small {
+      display: block;
+      margin-top: 1px;
+      font-family: var(--sans);
+      font-size: .53rem;
+      font-weight: 600;
+      letter-spacing: .21em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(20px, 3vw, 44px);
+    }
+
+    .nav a {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .09em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 180ms ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      color: var(--coffee);
+    }
+
+    .nav .nav-cta {
+      padding: 13px 18px;
+      border: 1px solid var(--ink);
+      transition: background-color 180ms ease, color 180ms ease;
+    }
+
+    .nav .nav-cta:hover,
+    .nav .nav-cta:focus-visible {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .menu-toggle svg {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-width: 1.5;
+    }
+
+    .hero {
+      display: grid;
+      min-height: 670px;
+      grid-template-columns: .91fr 1.09fr;
+      align-items: center;
+      gap: clamp(40px, 7.5vw, 112px);
+      padding-block: 76px 92px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 23px;
+      color: var(--coffee-dark);
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 620px;
+      margin-bottom: 23px;
+      font-family: var(--serif);
+      font-size: clamp(4.3rem, 8.5vw, 8.2rem);
+      font-weight: 400;
+      letter-spacing: -.085em;
+      line-height: .86;
+    }
+
+    h1 em {
+      color: var(--coffee);
+      font-weight: 400;
+    }
+
+    .hero-copy {
+      max-width: 410px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: .96rem;
+      line-height: 1.8;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 20px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--coffee);
+      background: var(--coffee);
+    }
+
+    .button svg {
+      width: 15px;
+      height: 15px;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.6;
+    }
+
+    .button.button-light {
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button.button-light:hover,
+    .button.button-light:focus-visible {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 510px;
+      isolation: isolate;
+    }
+
+    .hero-main {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      width: 77%;
+      height: 91%;
+      object-fit: cover;
+    }
+
+    .hero-inset {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      width: 39%;
+      height: 36%;
+      border: 8px solid var(--paper);
+      object-fit: cover;
+    }
+
+    .open-stamp {
+      position: absolute;
+      z-index: 2;
+      top: 8%;
+      left: 2%;
+      width: 118px;
+      height: 118px;
+      display: grid;
+      place-content: center;
+      border-radius: 50%;
+      background: var(--coffee);
+      color: #fff8ee;
+      text-align: center;
+      transform: rotate(-10deg);
+    }
+
+    .open-stamp span {
+      display: block;
+      font-size: .57rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .open-stamp strong {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 500;
+      letter-spacing: -.05em;
+    }
+
+    .visual-note {
+      position: absolute;
+      right: 1%;
+      bottom: -3%;
+      color: var(--muted);
+      font-family: var(--serif);
+      font-size: .92rem;
+      font-style: italic;
+      transform: rotate(-4deg);
+    }
+
+    .ticker {
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      background: var(--paper-deep);
+    }
+
+    .ticker-track {
+      width: max-content;
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      padding: 18px 0;
+      animation: ticker 32s linear infinite;
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--coffee-dark);
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .ticker-item::after {
+      color: var(--coffee);
+      content: "✳";
+      font-size: .9rem;
+    }
+
+    @keyframes ticker {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    .section {
+      padding-block: clamp(76px, 10vw, 142px);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading h2 {
+      max-width: 680px;
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -.08em;
+      line-height: .92;
+    }
+
+    .section-heading h2 em {
+      color: var(--coffee);
+      font-weight: 400;
+    }
+
+    .section-heading > p {
+      max-width: 270px;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.7;
+    }
+
+    .menu-tabs {
+      display: flex;
+      gap: 9px;
+      margin-bottom: 27px;
+      padding: 0 0 8px;
+      overflow-x: auto;
+      scrollbar-color: var(--coffee) var(--paper-deep);
+      scrollbar-width: thin;
+    }
+
+    .menu-tab {
+      flex: 0 0 auto;
+      min-height: 43px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      font: 700 .65rem var(--sans);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+    }
+
+    .menu-tab:hover,
+    .menu-tab[aria-selected="true"] {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .menu-panel {
+      padding: clamp(22px, 5vw, 52px);
+      background: #fbf9f4;
+    }
+
+    .menu-panel[hidden] {
+      display: none;
+    }
+
+    .menu-panel-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 25px;
+      padding-bottom: 19px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-panel-heading h3,
+    .menu-subheading {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      letter-spacing: -.07em;
+      line-height: 1;
+    }
+
+    .menu-panel-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .7rem;
+      text-align: right;
+    }
+
+    .menu-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: clamp(24px, 5vw, 72px);
+    }
+
+    .menu-item {
+      min-width: 0;
+      padding: 17px 0 15px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .menu-item-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .menu-item h4 {
+      margin: 0;
+      font-size: .91rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .menu-price {
+      flex: 0 0 auto;
+      color: var(--coffee-dark);
+      font-size: .8rem;
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .menu-item p {
+      max-width: 410px;
+      margin: 4px 30px 0 0;
+      color: var(--muted);
+      font-size: .73rem;
+      line-height: 1.55;
+    }
+
+    .menu-badge {
+      margin-left: 7px;
+      padding: 3px 6px;
+      border-radius: 2px;
+      background: var(--coffee);
+      color: white;
+      font-size: .5rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      vertical-align: .14em;
+    }
+
+    .menu-subsection + .menu-subsection {
+      margin-top: 33px;
+    }
+
+    .menu-subheading {
+      margin-bottom: 7px;
+      color: var(--coffee-dark);
+      font-size: 1.55rem;
+    }
+
+    .menu-footnote {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .73rem;
+      line-height: 1.6;
+    }
+
+    .menu-footnote a {
+      flex: 0 0 auto;
+      color: var(--coffee-dark);
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: clamp(38px, 8vw, 120px);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .about-photo-wrap {
+      position: relative;
+      min-height: 590px;
+    }
+
+    .about-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-copy {
+      padding: 60px clamp(28px, 7vw, 100px) 60px 0;
+    }
+
+    .about-copy .eyebrow {
+      color: #d99a74;
+    }
+
+    .about-copy h2 {
+      max-width: 520px;
+      margin-bottom: 26px;
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 6vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -.08em;
+      line-height: .92;
+    }
+
+    .about-copy h2 em {
+      color: #d99a74;
+      font-weight: 400;
+    }
+
+    .about-copy > p:not(.eyebrow) {
+      max-width: 450px;
+      margin-bottom: 29px;
+      color: rgba(245, 242, 235, .73);
+      font-size: .93rem;
+      line-height: 1.85;
+    }
+
+    .about-copy .button.button-light {
+      border-color: rgba(245, 242, 235, .65);
+      color: var(--paper);
+    }
+
+    .about-copy .button.button-light:hover,
+    .about-copy .button.button-light:focus-visible {
+      border-color: var(--paper);
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .events {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: clamp(35px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .events h2 {
+      margin-bottom: 21px;
+      font-family: var(--serif);
+      font-size: clamp(3.4rem, 6.8vw, 6.7rem);
+      font-weight: 400;
+      letter-spacing: -.085em;
+      line-height: .86;
+    }
+
+    .events h2 em {
+      color: var(--coffee);
+      font-weight: 400;
+    }
+
+    .events-intro {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+
+    .event-panel {
+      position: relative;
+      min-height: 350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(26px, 5vw, 58px);
+      overflow: hidden;
+      background: var(--paper-deep);
+    }
+
+    .event-panel::before,
+    .event-panel::after {
+      position: absolute;
+      z-index: 0;
+      border: 1px solid rgba(166, 94, 59, .23);
+      border-radius: 50%;
+      content: "";
+      pointer-events: none;
+    }
+
+    .event-panel::before {
+      top: -90px;
+      right: -50px;
+      width: 300px;
+      height: 300px;
+    }
+
+    .event-panel::after {
+      top: -45px;
+      right: -5px;
+      width: 210px;
+      height: 210px;
+    }
+
+    .event-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .event-label {
+      margin-bottom: 24px;
+      color: var(--coffee-dark);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .event-panel h3 {
+      max-width: 450px;
+      margin-bottom: 14px;
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 4.8vw, 4.5rem);
+      font-weight: 400;
+      letter-spacing: -.075em;
+      line-height: .96;
+    }
+
+    .event-panel p {
+      max-width: 420px;
+      margin-bottom: 25px;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.7;
+    }
+
+    .contact {
+      padding-block: clamp(66px, 9vw, 120px);
+      background: #e8e1d5;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 35px;
+      align-items: end;
+    }
+
+    .contact h2 {
+      max-width: 650px;
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 7vw, 6.8rem);
+      font-weight: 400;
+      letter-spacing: -.085em;
+      line-height: .89;
+    }
+
+    .contact h2 em {
+      color: var(--coffee);
+      font-weight: 400;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 20px;
+      justify-self: end;
+      width: min(100%, 390px);
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--line);
+      font-size: .82rem;
+    }
+
+    .contact-row span:first-child {
+      color: var(--muted);
+    }
+
+    .contact-row a {
+      font-weight: 600;
+      text-align: right;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .contact-details .button {
+      width: max-content;
+      margin-top: 4px;
+    }
+
+    .footer {
+      display: flex;
+      min-height: 88px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      color: var(--muted);
+      font-size: .67rem;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    .footer a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--coffee);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --page: min(100% - 42px, 680px);
+      }
+
+      .header {
+        min-height: 78px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 21px 19px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .nav.is-open {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .nav a {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav .nav-cta {
+        align-self: flex-start;
+        margin-top: 13px;
+        padding: 13px 17px;
+        border: 1px solid var(--ink);
+      }
+
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 34px;
+        padding-block: 69px 63px;
+      }
+
+      .hero-copy {
+        max-width: 500px;
+      }
+
+      .hero-visual {
+        min-height: min(70vw, 480px);
+      }
+
+      .hero-main {
+        width: 82%;
+        height: 94%;
+      }
+
+      .hero-inset {
+        width: 38%;
+        height: 38%;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+        gap: 17px;
+      }
+
+      .menu-list {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-panel-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .menu-panel-heading p {
+        text-align: left;
+      }
+
+      .menu-footnote {
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .about {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .about-photo-wrap {
+        min-height: min(78vw, 480px);
+      }
+
+      .about-copy {
+        width: var(--page);
+        margin-inline: auto;
+        padding: 56px 0 68px;
+      }
+
+      .events {
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .event-panel {
+        min-height: 320px;
+      }
+
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .contact-details {
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      :root {
+        --page: calc(100% - 36px);
+      }
+
+      .announcement {
+        font-size: .57rem;
+        letter-spacing: .08em;
+      }
+
+      .brand img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .brand-name {
+        font-size: 1.3rem;
+      }
+
+      h1 {
+        font-size: clamp(4rem, 18vw, 5.7rem);
+      }
+
+      .hero-visual {
+        min-height: 345px;
+      }
+
+      .open-stamp {
+        top: 2%;
+        left: 0;
+        width: 92px;
+        height: 92px;
+      }
+
+      .open-stamp strong {
+        font-size: 1.2rem;
+      }
+
+      .open-stamp span {
+        font-size: .49rem;
+      }
+
+      .visual-note {
+        right: 0;
+        bottom: -7%;
+        font-size: .78rem;
+      }
+
+      .section {
+        padding-block: 78px;
+      }
+
+      .section-heading h2 {
+        font-size: 3.45rem;
+      }
+
+      .menu-panel {
+        padding: 21px;
+      }
+
+      .menu-item {
+        padding-block: 14px 13px;
+      }
+
+      .menu-item h4 {
+        font-size: .84rem;
+      }
+
+      .menu-item p {
+        font-size: .7rem;
+      }
+
+      .menu-tab {
+        min-height: 40px;
+        padding-inline: 13px;
+        font-size: .6rem;
+      }
+
+      .about-photo-wrap {
+        min-height: 340px;
+      }
+
+      .about-copy h2,
+      .events h2 {
+        font-size: 3.7rem;
+      }
+
+      .event-panel {
+        min-height: 335px;
+        padding: 24px;
+      }
+
+      .contact h2 {
+        font-size: 3.7rem;
+      }
+
+      .contact-row {
+        font-size: .76rem;
+      }
+
+      .footer {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding-block: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">A little corner of Batumi <span>·</span> open every day, 9:00–22:00</div>
+
+  <header class="header page">
+    <a class="brand" href="#top" aria-label="PURE Coffee and Food, home">
+      <img src="assets/pure-profile.jpg" alt="">
+      <span class="brand-name">PURE<small>coffee &amp; food</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="Main navigation">
+      <a href="#menu">Menu</a>
+      <a href="#about">Our place</a>
+      <a href="#events">Events</a>
+      <a href="#contact">Find us</a>
+      <a class="nav-cta" href="https://www.instagram.com/pure.coffeefood/" target="_blank" rel="noopener noreferrer">Say hello on Instagram ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero page" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">Coffee, food &amp; a little breathing room</p>
+        <h1 id="hero-title">Make room<br>for <em>good.</em></h1>
+        <p class="hero-copy">A place in Batumi for slow breakfasts, unhurried dinners and getting a little work done in between. Come as you are; stay for one more coffee.</p>
+        <div class="button-row">
+          <a class="button" href="https://www.instagram.com/pure.coffeefood/" target="_blank" rel="noopener noreferrer">
+            Visit our Instagram
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="button button-light" href="#menu">Explore the menu</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="Coffee and cafe atmosphere">
+        <img class="hero-main" src="assets/interior.jpg" alt="Warm, welcoming cafe interior">
+        <img class="hero-inset" src="assets/coffee.jpg" alt="Freshly brewed filter coffee">
+        <div class="open-stamp" aria-label="Open daily from 9 am to 10 pm">
+          <span>every day</span>
+          <strong>9—22</strong>
+          <span>come on in</span>
+        </div>
+        <span class="visual-note">your table is waiting</span>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Coffee, breakfast, dinner, good company">
+      <div class="ticker-track" aria-hidden="true">
+        <span class="ticker-item">Coffee, made with care</span>
+        <span class="ticker-item">Breakfast without a rush</span>
+        <span class="ticker-item">Dinner and good company</span>
+        <span class="ticker-item">A table to work from</span>
+        <span class="ticker-item">Coffee, made with care</span>
+        <span class="ticker-item">Breakfast without a rush</span>
+        <span class="ticker-item">Dinner and good company</span>
+        <span class="ticker-item">A table to work from</span>
+      </div>
+    </div>
+
+    <section class="section page" id="menu" aria-labelledby="menu-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">The PURE menu</p>
+          <h2 id="menu-title">Find your<br><em>favourite.</em></h2>
+        </div>
+        <p>Breakfast, salads, toast, coffee, seasonal drinks and wine — all the good things from the cafe’s menu.</p>
+      </div>
+      <div class="menu-tabs" role="tablist" aria-label="Menu categories">
+        <button class="menu-tab" id="tab-breakfast" type="button" role="tab" aria-selected="true" aria-controls="panel-breakfast" tabindex="0">Breakfast &amp; salads</button>
+        <button class="menu-tab" id="tab-toasts" type="button" role="tab" aria-selected="false" aria-controls="panel-toasts" tabindex="-1">Toasts</button>
+        <button class="menu-tab" id="tab-appetizers" type="button" role="tab" aria-selected="false" aria-controls="panel-appetizers" tabindex="-1">Appetizers</button>
+        <button class="menu-tab" id="tab-drinks" type="button" role="tab" aria-selected="false" aria-controls="panel-drinks" tabindex="-1">Coffee &amp; drinks</button>
+        <button class="menu-tab" id="tab-seasonal" type="button" role="tab" aria-selected="false" aria-controls="panel-seasonal" tabindex="-1">Seasonal</button>
+        <button class="menu-tab" id="tab-wine" type="button" role="tab" aria-selected="false" aria-controls="panel-wine" tabindex="-1">Wine</button>
+      </div>
+      <div class="menu-panel" id="panel-breakfast" role="tabpanel" aria-labelledby="tab-breakfast" tabindex="0">
+        <div class="menu-panel-heading">
+          <h3>Breakfast &amp; salads</h3>
+          <p>All prices as shown on the cafe menu</p>
+        </div>
+        <div class="menu-subsection">
+          <h4 class="menu-subheading">Breakfasts</h4>
+          <div class="menu-list">
+            <article class="menu-item"><div class="menu-item-top"><h4>Breakfast with eggs</h4><span class="menu-price">14</span></div><p>Mixed salad, parsley pesto, parmesan, brioche</p></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Hashbrown</h4><span class="menu-price">21</span></div><p>Pepper cream, tzatziki, potato, zucchini, fried egg, parmesan, green oil</p></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Rice porridge</h4><span class="menu-price">16</span></div><p>Pear jam, stewed cherries, granola</p></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Syrniki</h4><span class="menu-price">23</span></div><p>Raspberry, condensed milk, pistachio crumble, Greek yogurt</p></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Pancakes</h4><span class="menu-price">18</span></div><p>Citrus butter, salted caramel, chocolate crumble</p></article>
+          </div>
+        </div>
+        <div class="menu-subsection">
+          <h4 class="menu-subheading">Salads</h4>
+          <div class="menu-list">
+            <article class="menu-item"><div class="menu-item-top"><h4>Cobb salad</h4><span class="menu-price">25</span></div><p>Mixed salad, fried chicken, bacon, guacamole, egg, tomato, blue cheese, honey balsamic</p></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Green salad</h4><span class="menu-price">22</span></div><p>Mixed salad, broccoli, zucchini, guacamole, parsley pesto, sesame, pumpkin seeds</p></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Duck salad <span class="menu-badge">New</span></h4><span class="menu-price">28</span></div><p>Romaine, arugula, hoisin sauce, sesame, orange dressing, sweet potato, caramelized beet</p></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Beef salad <span class="menu-badge">New</span></h4><span class="menu-price">32</span></div><p>Romaine, arugula, spiced carrots, peanut sauce, beef, sun-dried tomatoes, orange dressing, almonds</p></article>
+          </div>
+        </div>
+      </div>
+      <div class="menu-panel" id="panel-toasts" role="tabpanel" aria-labelledby="tab-toasts" tabindex="0" hidden>
+        <div class="menu-panel-heading"><h3>Toasts</h3><p>All prices as shown on the cafe menu</p></div>
+        <div class="menu-list">
+          <article class="menu-item"><div class="menu-item-top"><h4>Toast with stracciatella</h4><span class="menu-price">22</span></div><p>Mixed salad, romesco sauce, olive oil</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Sandwich with prosciutto</h4><span class="menu-price">24</span></div><p>Tomato jam, mixed salad, aioli sauce with capers</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Avocado toast</h4><span class="menu-price">21</span></div><p>Guacamole, tomato, seeds</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Tuna sandwich <span class="menu-badge">New</span></h4><span class="menu-price">26</span></div><p>Boiled egg, parsley, garlic, aioli, romaine, arugula, lemon &amp; dill cream</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Duck sandwich <span class="menu-badge">New</span></h4><span class="menu-price">27</span></div><p>Peanut sauce, romaine, arugula, hoisin sauce, orange dressing</p></article>
+        </div>
+      </div>
+      <div class="menu-panel" id="panel-appetizers" role="tabpanel" aria-labelledby="tab-appetizers" tabindex="0" hidden>
+        <div class="menu-panel-heading"><h3>Appetizers</h3><p>All prices as shown on the cafe menu</p></div>
+        <div class="menu-list">
+          <article class="menu-item"><div class="menu-item-top"><h4>Antipasti</h4><span class="menu-price">21</span></div><p>Prosciutto, grissini, capers, ricotta with herbs, tomato jam, salami salchichon</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Chicken pâté</h4><span class="menu-price">20</span></div><p>Pedro Ximénez jelly, pistachio</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Hummus</h4><span class="menu-price">14</span></div><p>Olive oil, cumin, paprika and wheat toasts</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Vitello tonnato</h4><span class="menu-price">23</span></div><p>Baked pepper, capers, olive oil</p></article>
+        </div>
+      </div>
+      <div class="menu-panel" id="panel-drinks" role="tabpanel" aria-labelledby="tab-drinks" tabindex="0" hidden>
+        <div class="menu-panel-heading"><h3>Coffee &amp; drinks</h3><p>All prices as shown on the cafe menu</p></div>
+        <div class="menu-subsection">
+          <h4 class="menu-subheading">Black</h4>
+          <div class="menu-list">
+            <article class="menu-item"><div class="menu-item-top"><h4>Espresso</h4><span class="menu-price">7</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Filter coffee</h4><span class="menu-price">8 / 10</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Americano</h4><span class="menu-price">7 / 9</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Barista set</h4><span class="menu-price">18</span></div></article>
+          </div>
+        </div>
+        <div class="menu-subsection">
+          <h4 class="menu-subheading">White</h4>
+          <div class="menu-list">
+            <article class="menu-item"><div class="menu-item-top"><h4>Cappuccino</h4><span class="menu-price">9 / 11</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Latte</h4><span class="menu-price">10</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Flat white</h4><span class="menu-price">10</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Raf with salted caramel</h4><span class="menu-price">13</span></div></article>
+          </div>
+        </div>
+        <div class="menu-subsection">
+          <h4 class="menu-subheading">Hot</h4>
+          <div class="menu-list">
+            <article class="menu-item"><div class="menu-item-top"><h4>Matcha latte</h4><span class="menu-price">12</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Cacao</h4><span class="menu-price">10</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Tea / buckwheat tea</h4><span class="menu-price">7 / 8</span></div></article>
+          </div>
+        </div>
+        <div class="menu-subsection">
+          <h4 class="menu-subheading">Cold</h4>
+          <div class="menu-list">
+            <article class="menu-item"><div class="menu-item-top"><h4>Violet smoothie</h4><span class="menu-price">17</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Orange smoothie</h4><span class="menu-price">17</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Espresso tonic</h4><span class="menu-price">14</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Bumble</h4><span class="menu-price">14</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Iced latte</h4><span class="menu-price">10</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Iced matcha latte</h4><span class="menu-price">12</span></div></article>
+            <article class="menu-item"><div class="menu-item-top"><h4>Matcha tonic</h4><span class="menu-price">14</span></div></article>
+          </div>
+        </div>
+      </div>
+      <div class="menu-panel" id="panel-seasonal" role="tabpanel" aria-labelledby="tab-seasonal" tabindex="0" hidden>
+        <div class="menu-panel-heading"><h3>Seasonal</h3><p>All prices as shown on the cafe menu</p></div>
+        <div class="menu-list">
+          <article class="menu-item"><div class="menu-item-top"><h4>Brazilian lemonade</h4><span class="menu-price">12</span></div></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Lemon-vanilla iced tea</h4><span class="menu-price">15</span></div></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Creamy mango matcha latte</h4><span class="menu-price">16</span></div></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Dirty orange batch brew</h4><span class="menu-price">16</span></div></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Citrus iced latte</h4><span class="menu-price">15</span></div></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>J Cola</h4><span class="menu-price">12</span></div></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Orange currant lemonade</h4><span class="menu-price">13</span></div></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Honey peach-jasmine iced tea</h4><span class="menu-price">15</span></div></article>
+        </div>
+      </div>
+      <div class="menu-panel" id="panel-wine" role="tabpanel" aria-labelledby="tab-wine" tabindex="0" hidden>
+        <div class="menu-panel-heading"><h3>Wine</h3><p>Glass / bottle · prices as shown on the cafe menu</p></div>
+        <div class="menu-list">
+          <article class="menu-item"><div class="menu-item-top"><h4>Merlot</h4><span class="menu-price">14 / 70</span></div><p>Les But More · France · 2023</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Sauvignon Blanc</h4><span class="menu-price">14 / 73</span></div><p>Laders de Rome · Spain · 2019</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Adega</h4><span class="menu-price">14 / 71</span></div><p>Ponte de Lima · Portugal · 2022</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Cava</h4><span class="menu-price">16 / 80</span></div><p>Berceo · Catalonia</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Prosecco</h4><span class="menu-price">13 / 67</span></div><p>Fili · Veneto, Italy</p></article>
+          <article class="menu-item"><div class="menu-item-top"><h4>Brut Chardonnay N/A</h4><span class="menu-price">— / 65</span></div><p>Dargent · France</p></article>
+        </div>
+      </div>
+      <div class="menu-footnote">
+        <span>Menu items and prices may change. Please check with PURE for the latest availability.</span>
+        <a href="https://www.instagram.com/pure.coffeefood/" target="_blank" rel="noopener noreferrer">Ask PURE on Instagram ↗</a>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-photo-wrap">
+        <img class="about-photo" src="assets/coffee.jpg" alt="A slow coffee being prepared at the bar">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">A place to just be</p>
+        <h2 id="about-title">Your day,<br>your <em>pace.</em></h2>
+        <p>PURE is a Batumi spot for breakfast, dinner and work. Come in for a proper meal, bring your laptop, meet a friend, or take a quiet moment with a cup in hand.</p>
+        <a class="button button-light" href="https://www.instagram.com/pure.coffeefood/" target="_blank" rel="noopener noreferrer">
+          Get to know PURE
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="section page events" id="events" aria-labelledby="events-title">
+      <div>
+        <p class="eyebrow">There’s always something brewing</p>
+        <h2 id="events-title">Meet us<br><em>after hours.</em></h2>
+        <p class="events-intro">Looking for a reason to get together? Check our Instagram for the latest events, special evenings and announcements.</p>
+      </div>
+      <div class="event-panel">
+        <div>
+          <p class="event-label">Events &amp; updates · Batumi</p>
+          <h3>Good things are better shared.</h3>
+          <p>Upcoming dates and details are posted on Instagram. Send us a message to find out what’s on or ask about a gathering.</p>
+        </div>
+        <a class="button" href="https://www.instagram.com/pure.coffeefood/" target="_blank" rel="noopener noreferrer">
+          See what’s on
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner page">
+        <div>
+          <p class="eyebrow">Come by, say hi</p>
+          <h2 id="contact-title">Find your<br>spot in <em>Batumi.</em></h2>
+        </div>
+        <div class="contact-details">
+          <div class="contact-row">
+            <span>Location</span>
+            <span>Batumi, Georgia</span>
+          </div>
+          <div class="contact-row">
+            <span>Every day</span>
+            <span>9:00–22:00</span>
+          </div>
+          <div class="contact-row">
+            <span>Instagram</span>
+            <a href="https://www.instagram.com/pure.coffeefood/" target="_blank" rel="noopener noreferrer">@pure.coffeefood ↗</a>
+          </div>
+          <a class="button" href="https://www.google.com/maps/search/?api=1&query=PURE+Coffee+Food+Batumi" target="_blank" rel="noopener noreferrer">
+            Search on the map
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/></svg>
+          </a>
+          <span class="hero-copy" style="margin:0;font-size:.75rem">Need the exact address? Send us a quick DM.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer page">
+    <a class="brand-name" href="#top">PURE <small>coffee &amp; food</small></a>
+    <span>Batumi · Every day, 9:00–22:00</span>
+    <a href="https://www.instagram.com/pure.coffeefood/" target="_blank" rel="noopener noreferrer">Follow along ↗</a>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navigation = document.querySelector(".nav");
+    const menuTabs = [...document.querySelectorAll(".menu-tab")];
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+      navigation.classList.toggle("is-open", !isOpen);
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target instanceof HTMLAnchorElement && !event.target.classList.contains("nav-cta")) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+        navigation.classList.remove("is-open");
+      }
+    });
+
+    const selectMenuTab = (tab) => {
+        menuTabs.forEach((item) => {
+          const isSelected = item === tab;
+          item.setAttribute("aria-selected", String(isSelected));
+          item.tabIndex = isSelected ? 0 : -1;
+          document.getElementById(item.getAttribute("aria-controls")).hidden = !isSelected;
+        });
+    };
+
+    menuTabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => selectMenuTab(tab));
+        tab.addEventListener("keydown", (event) => {
+          let nextIndex;
+          if (event.key === "ArrowRight") {
+            nextIndex = (index + 1) % menuTabs.length;
+          } else if (event.key === "ArrowLeft") {
+            nextIndex = (index - 1 + menuTabs.length) % menuTabs.length;
+          } else if (event.key === "Home") {
+            nextIndex = 0;
+          } else if (event.key === "End") {
+            nextIndex = menuTabs.length - 1;
+          } else {
+            return;
+          }
+
+          event.preventDefault();
+          menuTabs[nextIndex].focus();
+          selectMenuTab(menuTabs[nextIndex]);
+        });
+    });
+  </script>
+</body>
+</html>
